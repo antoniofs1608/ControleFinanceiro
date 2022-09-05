@@ -11,11 +11,14 @@ namespace ControleFinanceiro.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Tipo> builder)
         {
+            // chave primária
             builder.HasKey(t => t.TipoId);
+            // nome obrigatório, caso não queira colocar IsRequired(false)
             builder.Property(t => t.Nome).IsRequired().HasMaxLength(20);
 
             builder.HasMany(t => t.Categorias).WithOne(t => t.Tipo);
 
+            // adicionar dados na tabela
             builder.HasData(
                 new Tipo
                 {
@@ -28,6 +31,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
                     Nome = "Ganho"
                 });
 
+            // nome da tabela
             builder.ToTable("Tipos");
         }
     }

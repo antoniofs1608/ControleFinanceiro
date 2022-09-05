@@ -31,8 +31,12 @@ namespace ControleFinanceiro.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // O primeiro componente a ser configurado é o nosso contexto especificando qual é a classe de contexto
+            // que estamos utilizando e onde está a conexão que levará ao banco de dados
+            // UseSqlServer indica que estou usando o SQL Server
+            // GetConnectionString indica o nome do banco de dados e qual é a instãncia
+            // ConexaoBD esta informado no appSettings.json
             services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("ConexaoBD")));
-
             services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<Contexto>();
 
             services.ConfigurarSenhaUsuario();

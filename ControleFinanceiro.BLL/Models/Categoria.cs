@@ -8,7 +8,7 @@ namespace ControleFinanceiro.BLL.Models
         public string Nome { get; set; }
         public string Icone { get; set; }
 
-        public int TipoId { get; set; }
+        public int TipoId { get; set; } // chave estrangeira
         public Tipo Tipo { get; set; }
 
         public virtual ICollection<Despesa> Despesas { get; set; }

@@ -11,9 +11,18 @@ namespace ControleFinanceiro.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Funcao> builder)
         {
+            // quem vai cuidar dos usuários e funções é o Identity e ele já vem com conjunto
+            // pré pronto de classes, então vamos precisar modificar poucas coisas
+            //1ª ao criar uma função o valor da chave primária não é gerada automaticamente, a PK da função é o Id
             builder.Property(f => f.Id).ValueGeneratedOnAdd();
+
+            // atributo da class model
             builder.Property(f => f.Descricao).IsRequired().HasMaxLength(50);
 
+            // relacionamento já vem configurado
+
+            // adicionar dados na tabela
+            // NormalizeName é justamente onde a função usa para comparar valores
             builder.HasData(
                 new Funcao
                 {
@@ -32,6 +41,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
                     Descricao = "Usuário do sistema"
                 });
 
+            // nome da tabela
             builder.ToTable("Funcoes");
         }
     }
