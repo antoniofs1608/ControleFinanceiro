@@ -104,14 +104,14 @@ namespace ControleFinanceiro.API
             });
 
             //TODO: 
-            // Ver depois no front-end qual a porta, por enquanto esta 7217
+            // Front-end porta: spa.UseProxyToSpaDevelopmentServer($"http://localhost:4200/");
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = Path.Combine(Directory.GetCurrentDirectory(), "CTCEA-front-end");
 
                 if (app.Environment.IsDevelopment())
                 {
-                    spa.UseProxyToSpaDevelopmentServer($"http://localhost:7217/");
+                    spa.UseProxyToSpaDevelopmentServer($"http://localhost:4200/");
                 }
             });
         }
