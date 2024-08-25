@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ControleFinanceiro_BLL.Models
+namespace ControleFinanceiro.BLL.Models
 {
     public class Tipo
     {
