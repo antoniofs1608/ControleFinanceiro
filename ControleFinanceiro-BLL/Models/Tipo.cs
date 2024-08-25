@@ -11,7 +11,6 @@ namespace ControleFinanceiro_BLL.Models
         public string Nome { get; set; }
 
         // Linha abaixo Evita desperdiço de memória
-        public virtual ICollection<Categoria> GetCategorias { get; set; }
+        public virtual ICollection<Categoria> Categorias { get; set; }
     }
-
 }

@@ -17,5 +17,4 @@ namespace ControleFinanceiro_BLL.Models
 
         public virtual ICollection<Ganho> Ganhos { get; set; }
     }
-
 }
