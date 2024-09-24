@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TiposService } from './services/tipos.service';
+import { CategoriasService } from './services/categorias.service';
+
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { TiposService } from './services/tipos.service';
   ],
   providers: [
     TiposService, 
+    CategoriasService,
     HttpClientModule
   ],
   bootstrap: [AppComponent]
